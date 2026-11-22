@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\NodeController;
+use App\Http\Controllers\ShortestPathController;
 
 Route::post('/register', [AuthController::class, 'register'])->middleware('throttle:10,1'); // Limit to 10 requests per minute
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:10,1');
@@ -17,4 +18,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/nodes', [NodeController::class, 'index']);
     Route::post('/nodes', [NodeController::class, 'store']);
 
+    Route::post('/shortest-path', [ShortestPathController::class, 'calculate']);
+    Route::get('/shortest-path/history', [ShortestPathController::class, 'history']);
 });

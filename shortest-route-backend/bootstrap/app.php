@@ -15,5 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        // Always answer API routes with JSON (401/403/404/422 ...), never a redirect or HTML page.
+        $exceptions->shouldRenderJsonWhen(
+            fn ($request, Throwable $e) => $request->is('api/*') || $request->expectsJson()
+        );
     })->create();
