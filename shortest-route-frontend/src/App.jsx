@@ -3,7 +3,7 @@ import { useAuth } from './AuthContext.jsx';
 import Navbar from './components/Navbar.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
-// import Calculator from './pages/Calculator.jsx';
+import Calculator from './pages/Calculator.jsx';
 
 function Protected({ children }) {
   const { user } = useAuth();

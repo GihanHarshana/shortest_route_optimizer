@@ -16,9 +16,6 @@ export default function Navbar() {
     <header className="bg-slate-900 text-white">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-2 px-4 py-3">
         <Link to="/" className="flex items-center gap-2 text-lg font-semibold">
-          <span className="grid h-7 w-7 place-items-center rounded-full bg-yellow-400 text-sm font-bold text-slate-900">
-            A
-          </span>
           Shortest Route Optimizer
         </Link>
 
